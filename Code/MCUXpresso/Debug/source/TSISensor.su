@@ -1,0 +1,2 @@
+../source/TSISensor.c:5:6:TSI_Init	8	static
+../source/TSISensor.c:23:5:TSI_Scan	16	static

@@ -1,0 +1,15 @@
+/Users/jiayingli/Downloads/SP2023/CS3420/FinalProject/drivers/fsl_slcd.h:376:20:SLCD_StartDisplay	16	static
+/Users/jiayingli/Downloads/SP2023/CS3420/FinalProject/drivers/fsl_slcd.h:426:20:SLCD_SetBackPlanePhase	24	static
+/Users/jiayingli/Downloads/SP2023/CS3420/FinalProject/drivers/fsl_slcd.h:448:20:SLCD_SetFrontPlaneSegments	24	static
+../source/lcd.c:17:6:LCD_TimeDelay	16	static
+../source/lcd.c:24:6:init_lcd	208	static
+../source/lcd.c:95:6:segmentToPinNumber	24	static
+../source/lcd.c:117:6:turnOnSegment	32	static
+../source/lcd.c:127:6:turnOffSegment	32	static
+../source/lcd.c:137:6:clearDigit	24	static
+../source/lcd.c:149:6:displayDigit	24	static
+../source/lcd.c:158:6:displayDecimalPoint	16	static
+../source/lcd.c:162:6:clearDecimalPoint	16	static
+../source/lcd.c:166:6:displayColon	8	static
+../source/lcd.c:170:6:clearColon	8	static
+../source/lcd.c:174:6:clearDisplay	16	static

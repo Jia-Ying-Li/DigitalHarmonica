@@ -1,0 +1,5 @@
+../source/start.c:17:6:init_uart	8	static
+../source/start.c:27:6:uart_putc	16	static
+../source/start.c:35:6:uart_puts	16	static
+../source/start.c:44:6:short_delay	16	static
+../source/start.c:51:5:main	16	static

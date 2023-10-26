@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Project</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript>
+    <link rel="stylesheet" href="assets/css/noscript.css" />
+  </noscript>
+</head>
+
+
+
+
+<!-- Main -->
+<div id="main">
+
+  <!-- Featured Post -->
+  <article class="post featured">
+    <header class="major">
+      <h2>System Overview</h2>
+      <h3 style="font-size:30px">System Diagram</h3>
+      <img height=1000px src = "images/Diagram.png" />
+
+      <p>
+        <br>
+      </p>
+
+      <h3 style="font-size:30px">System Description</h3>
+      <p style="text-align:left"> Our target for this project was to replicate a physical harmonica using the various
+        sensors and computing available given the FRDM-KL46Z board. Having worked with the board throughout the
+        semester, we've gained significant experience with its logical design and programming, as well as the on-board
+        LEDs (used for debugging and test purposes). With that understanding, the final project provides the opportunity
+        to explore the board's functionality as well as the other available sensors and devices. Notably, the capacitive
+        touch sensor and the liquid crystal display (LCD). These two applications are of interest to our project due to
+        their functionality. Such that the LCD acts as an external display while the slider utilizes the properties of
+        capacitive sensing. When your finger applies a specific pressure to different points along the board's sensor,
+        the difference in capacitance correlates with decreased spacing between the plates such that the relative
+        location can be determined. The LCD can then be programmed to trigger alongside the finger's positioning and
+        display any required values based on the 7-segment display encoding. Our digital harmonica will then read in the
+        finger's position on the touch sensor corresponding to notes from that of a low C to that of a high C (spanning
+        Low C, D, E, F, G, A, B, High C) where the notes played will be displayed provided the LCD in real time. </p>
+      <p style="text-align:left"> To configure the slider, LCD, and the audio, several systems needed to be
+        connected through the MCUXpresso IDE. The respective software/driver systems need to be integrated into the main
+        file system to run each of these components, and their set-up scripts must also be written alongside the main
+        control script. The necessary slider configuration is minimal in its set-up script, with only initialization and
+        scan functionality required. However, the required support for the LCD was more complex in the required drivers
+        and setting configurations. </p>
+      <p style="text-align:left"> Finally to display the audio of our system to play the notes we desire, we hand off
+        the necessary action to our implementation on Python. Such that using the serial port and UART functions, we are
+        able to obtain the input of the FRDM-KL46Z board by relying on the C implementation on MCUXpresso. To ensure
+        that we are not overloading our system in the constant transmission of data, we require a delay between each
+        scan. In the process of setting up the serial implementation, we additionally realized that there was a pin
+        conflict between the UART functions and the LCD functions such that to have both work in unison, we may have to
+        reassign pins. Since this appeared to be preset within the device, we decided that it would be best to instead
+        focus our attention elsewhere and have the Python terminal display the same function. Once we obtained the
+        necessary inputs, we then made use of the PyGame library to play the specific note based on the provided inputs.
+        Once the initial implementation is completed, the rest of our time was focused on refining and polishing our
+        final result.</p>
+
+        <p>
+          <br>
+        </p>
+        
+      <h3 style="font-size:30px">Resources</h3> 
+      <p style="text-align:left">
+        <b style="font-size:20px">Capacitive Touch Sensor</b> <br /> NXP Documentation and Example Projects From RIT
+      <p>
+
+      <p style="text-align:left">
+        <b style="font-size:20px">Liquid Crystal Display</b> <br /> Provided As Public Course Resource
+      <p>
+
+      <p style="text-align:left">
+        <b style="font-size:20px">Serial</b> <br /> Provided As Public Course Resource
+      <p>
+
+      <p style="text-align:left">
+        <b style="font-size:20px">Audio</b> <br /> <a href="https://www.pygame.org/docs/"> PyGame Library </a>
+      <p>
+	      
+	<p style="text-align:left">
+        <b style="font-size:20px">Website</b> <br /> <a href="https://html5up.net/"> HTML5UP Template </a>
+      <p>
+	    
+        <p>
+          <br>
+        </p>
+      <ul class="actions special">
+        <li><a href="index.html" class="button">Return</a></li>
+      </ul>
+
+
+
+  </article>
+
+
+  <!-- <a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a> -->
+
+
+  <div id="main">
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,5 @@
+/Users/jiayingli/Downloads/SP2023/CS3420/FinalProject/drivers/fsl_slcd.h:376:20:SLCD_StartDisplay	16	static
+/Users/jiayingli/Downloads/SP2023/CS3420/FinalProject/drivers/fsl_slcd.h:387:20:SLCD_StopDisplay	16	static
+/Users/jiayingli/Downloads/SP2023/CS3420/FinalProject/drivers/fsl_slcd.h:406:20:SLCD_StopBlinkMode	16	static
+../source/slcd.c:63:13:SLCD_TimeDelay	16	static
+../source/slcd.c:71:5:main1	48	static

@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper" class="fade-in">
+
+		<!-- Intro -->
+		<div id="intro">
+			<h1 style="font-size:85px">An Embedded System<br /> Project </h1>
+			<ul class="actions">
+				<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
+			</ul>
+		</div>
+
+		<!-- Header -->
+		<header id="header">
+			<a class="logo">Sophia Franklin & Jia Ying Li </a>
+		</header>
+
+
+
+		<!-- Main -->
+		<div id="main">
+
+			<!-- Featured Post -->
+			<article class="post featured">
+				<header class="major">
+					<h2><a href="images/harmonica.jpg">Digital<br />
+							Harmonica</a></h2>
+					<p style="font-size:25px">In the words of Shakespeare, "if music be the food of love, play on."</p>
+					<p>For our final project, we will be recreating a harmonica using the FRDM-KL46Z board. Similar to a physical
+						harmonica, musical notes can be played through continuous movement and pressure. However, unlike the
+						harmonica where you use your mouth and breath to play the notes, the digital harmonica is played on the
+						FRDM-KL46Z board by sliding one's finger over the capacitive touch sensor. The respective notes can then be
+						viewed through the terminal of your device and heard through the connected device’s speaker system. The
+						motivation for this project stems from the cultural relevance of creating music. It can become the
+						inspiration to creative inventions by providing another means of access to young enjoyers of music all
+						around. Furthermore, the project gave us the opportunity to really explore the course materials and experience
+						that we've gained this semester with its various labs and deliverables. Applying this understanding to a similar 
+						environment/setup, we were able to be creative with its possibilities and make a project that connected to our own 
+						musical interests.
+					</p>
+					<p> Our project demo video is shown below to explain the project's design and usage. Created with Vimeo video editing software,
+						please enjoy our group's narration of the project design process and implementation! 
+					</p>
+					</p>
+				</header>
+				<iframe class="image main" height=500px src="https://www.youtube.com/embed/DcUC9_bmEdk">
+				</iframe>
+			</article>
+
+			<article class="post featured">
+				<header class="major">
+					<h2 style="font-size:45px">System Overview</h2>
+				</header>
+				<a class="image main"><img src="images/FRDMKL46Z.JPG" alt="" /></a>
+
+				<ul class="actions special">
+					<li><a href="system.html" class="button">Continue</a></li>
+				</ul>
+			</article>
+			<article class="post featured">
+				<header class="major">
+					<h2 style="font-size:45px">Testing</h2>
+				</header>
+				<p>Our first step of action was to work on the touch capacitor slider (TSI) and ensure that the
+					placement of the user's finger will give a correspondence to the note we hope to play. The TSI was configured using various 
+					resources from the board's software support as well as external open-source projects oneline. To examine and fine-tune the accuracy of
+					this step, we first display the note on the liquid crystal display (LCD). The necessary set-up and configuration
+					for this implementation was done with provided course resources and further edited for our specific setup. Once we were sure that the
+					correspondence to the touch capacitor is in working as expected, we continue on working with playing the audio
+					corresponding to the note inputs. We accomplish this by making use of the serial port and the UART functions.
+					This configuration was also complex to implement, as the board's serial data had to be connected and communicating between
+					the two platforms - MCUXpresso and the Python script. However, we were able to link the two through the board's serial
+					identity and provide a one-way communication channel for the slider's data to be sent over and processed for sound output
+					via the Python terminal. Furthermore, we could expand on the sound settings and options while in the Python environment
+					due to the external sound libraries available on its platform.
+					Such that given the input of the touch capacitor from the FRDM-KL46Z board, we will be able to transmit the
+					data to our Python implementation and make use of it to play the audio provided the PyGame library. To ensure
+					the data is being transmitted between both implementations, we print the data we received in the terminal of
+					our Python implementation. Once we observe that the note inputs are received correctly, we are assured that
+					our system is in working condition with accurate positional data.
+				</p>
+				<p> When all of the above testing is complete, we further refined the final system by
+					better developing the intervals of the touch capacitor such that there will be a more accurate one to one
+					correspondence to that of a physical harmonica. We also switched the LCD to a virtual terminal setup due to sensor
+					conflicts - the serial port and LCD pins are connected, so it was simple enough to modify our output display values.
+					However, this ended up giving us additional control over what was displayed due to the increased scope of the virtual terminal-
+					not only does it have more space for displaying messages (which is beneficial for debugging), but it's also more dynamic with 
+					testing and implementing various output. Finalizing the testing for each of the aforementioned sensors and systems, we could continue
+					adding in additional capabilities eg. different sounds and usages. With a robust testing platform through the two displays and physical
+					controls, it was simple to add in various sounds and abilities. The benefits of a robust platform mean that continued iteration and 
+					design are possible ie. adding in LED output or additional sensors. While we didn't implement these due to timing constraints, having 
+					a stable set-up meant that we could easily build on our existing platform if wanted.
+				</p>
+			</article>
+			<article class="post featured">
+				<header class="major">
+					<h2 style="font-size:45px">Work Distribution</h2>
+				</header>
+				<p> We were able to collaborate by working together on different aspects of the
+					project and meeting later to elaborate on our progress. </p>
+
+				<p> The project started off with Sophia working on the touch capacitor and ensuring
+					that there is a correspondence between the touch capacitor and the note we would like to play. In this step of
+					our project, we proved the accuracy of the implementation by using the liquid crystal display (LCD). Such that
+					we were hoping that the LCD can then be used in our final system to display the note input. The next step was
+					then followed by Jia Ying who worked on the audio given the touch capacitor input. To transmit the data
+					between implementations, the serial port and the UART functions were used. Once the data can be received, The
+					PyGame library is then used to play the sounds we want corresponding to each individual note. It was at around
+					this point we realized there was a pin conflict between the UART functions and the LCD functions. We find
+					going around this will be challenging and given that the Python terminal can also display the notes, we
+					abandoned the idea of using the LCD. Instead we made better use of our time to work on refining our
+					implementation to ensure our system was accurate. </p>
+
+				<p> Whenever one partner had a pressing concern, the other partner was quick to
+					respond with possible solutions. Our expectations of each other were very clearly outlined throughout our
+					collaboration of the project and each step was facilitated readily. </p>
+
+			</article>
+
+			<div id="main">
+
+				<!-- Scripts -->
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/jquery.scrollex.min.js"></script>
+				<script src="assets/js/jquery.scrolly.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
